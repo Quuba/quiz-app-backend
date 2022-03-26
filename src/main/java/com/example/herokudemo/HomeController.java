@@ -15,6 +15,7 @@ public class HomeController {
         return "hello";
     }
 
+    @CrossOrigin("*")
     @GetMapping("/all")
     public List<Question> findAllQuestions() {
         return questionRepository.findAll();
@@ -26,6 +27,7 @@ public class HomeController {
         return questionRepository.count();
     }
 
+    @CrossOrigin("*")
     @PostMapping("/question")
     public Question newQuestion(@RequestBody Question question){
         return questionRepository.save(question);
