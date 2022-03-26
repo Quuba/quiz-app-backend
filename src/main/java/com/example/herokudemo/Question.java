@@ -32,6 +32,18 @@ public class Question {
         this.questionText = questionText;
     }
 
+    public Question(String questionText, String answer1, boolean isCorrect1, String answer2, boolean isCorrect2, String answer3, boolean isCorrect3, String answer4, boolean isCorrect4) {
+        this.questionText = questionText;
+        this.answer1 = answer1;
+        this.isCorrect1 = isCorrect1;
+        this.answer2 = answer2;
+        this.isCorrect2 = isCorrect2;
+        this.answer3 = answer3;
+        this.isCorrect3 = isCorrect3;
+        this.answer4 = answer4;
+        this.isCorrect4 = isCorrect4;
+    }
+
     public String getQuestionText() {
         return questionText;
     }
