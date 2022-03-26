@@ -12,11 +12,4 @@ public class HerokuDemoApplication {
         SpringApplication.run(HerokuDemoApplication.class, args);
     }
 
-    @Bean
-    ApplicationRunner applicationRunner(QuestionRepository questionRepository){
-        return args -> {
-            questionRepository.save(new Question("cool beans"));
-            questionRepository.save(new Question("jaka jest szansa"));
-        };
-    }
 }
