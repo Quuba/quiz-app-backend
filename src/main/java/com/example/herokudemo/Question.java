@@ -24,6 +24,9 @@ public class Question {
     String answer4;
     boolean isCorrect4;
 
+    public Question() {
+    }
+
     public Question(String questionText) {
         this.questionText = questionText;
     }
