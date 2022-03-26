@@ -23,6 +23,11 @@ public class HomeController {
         return questionRepository.findAll();
     }
 
+    @GetMapping("/all/count")
+    public Integer getQuestionCount() {
+        return questionRepository.countAll();
+    }
+
     @PostMapping("/question")
     public Question newQuestion(@RequestBody Question question){
         return questionRepository.save(question);

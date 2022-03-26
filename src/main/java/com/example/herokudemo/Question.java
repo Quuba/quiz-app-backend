@@ -107,4 +107,5 @@ public class Question {
 interface QuestionRepository extends JpaRepository<Question, Integer> {
     Question findById(int id);
     List<Question> findAll();
+    Integer countAll();
 };
