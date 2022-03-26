@@ -24,8 +24,8 @@ public class HomeController {
     }
 
     @GetMapping("/all/count")
-    public Integer getQuestionCount() {
-        return questionRepository.countAll();
+    public long getQuestionCount() {
+        return questionRepository.count();
     }
 
     @PostMapping("/question")

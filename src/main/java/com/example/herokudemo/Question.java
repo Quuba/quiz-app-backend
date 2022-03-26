@@ -1,6 +1,7 @@
 package com.example.herokudemo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import javax.persistence.*;
 import java.util.List;
@@ -104,8 +105,7 @@ public class Question {
     }
 }
 
-interface QuestionRepository extends JpaRepository<Question, Integer> {
+interface QuestionRepository extends CrudRepository<Question, Integer> {
     Question findById(int id);
     List<Question> findAll();
-    Integer countAll();
 };
