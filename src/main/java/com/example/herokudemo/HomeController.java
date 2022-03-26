@@ -2,6 +2,8 @@ package com.example.herokudemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,7 +20,11 @@ public class HomeController {
 
     @GetMapping("/all")
     public List<Question> findAllQuestions() {
-        questionRepository.save(new Question("jaka jest szansa"));
         return questionRepository.findAll();
+    }
+
+    @PostMapping("/question")
+    public Question newQuestion(@RequestBody Question question){
+        return questionRepository.save(question);
     }
 }
