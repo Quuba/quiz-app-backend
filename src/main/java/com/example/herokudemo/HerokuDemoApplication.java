@@ -12,11 +12,11 @@ public class HerokuDemoApplication {
         SpringApplication.run(HerokuDemoApplication.class, args);
     }
 
-    @Bean
-    ApplicationRunner applicationRunner(QuestionRepository questionRepository){
-        return args -> {
-            questionRepository.save(new Question("cool beans", "hell yeah brother", true, "pam pam pam pam", false, "wann hast du geburtstag", false, "kebap", false));
-            questionRepository.save(new Question("jaka jest szansa", "~27.3%", false, "duza", false, "durchfal", false, "to zalezy", true));
-        };
-    }
+//    @Bean
+//    ApplicationRunner applicationRunner(QuestionRepository questionRepository){
+//        return args -> {
+//            questionRepository.save(new Question("cool beans", "hell yeah brother", true, "pam pam pam pam", false, "wann hast du geburtstag", false, "kebap", false));
+//            questionRepository.save(new Question("jaka jest szansa", "~27.3%", false, "duza", false, "durchfal", false, "to zalezy", true));
+//        };
+//    }
 }
