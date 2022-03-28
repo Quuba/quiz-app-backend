@@ -44,6 +44,14 @@ public class Question {
         this.isCorrect4 = isCorrect4;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getQuestionText() {
         return questionText;
     }
