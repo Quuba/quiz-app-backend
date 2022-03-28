@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@CrossOrigin("*")
 @RestController
 public class HomeController {
 
@@ -18,13 +19,12 @@ public class HomeController {
         return "hello";
     }
 
-    @CrossOrigin("*")
+
     @GetMapping("/all")
     public List<Question> findAllQuestions() {
         return questionRepository.findAll();
     }
 
-    @CrossOrigin("*")
 
     @GetMapping("/all/{id}")
     public Question findQuestion(@PathVariable int id) {
@@ -38,25 +38,25 @@ public class HomeController {
         List<Question> questions = questionRepository.findAll();
         long questionCount = questionRepository.count();
         for (int i = 0; i < number; i++) {
-            randomQuestions.add(questions.get(random.nextInt(0, (int)questionCount)));
+            randomQuestions.add(questions.get(random.nextInt(0, (int) questionCount)));
         }
         return randomQuestions;
 
     }
 
-    @CrossOrigin("*")
+
     @DeleteMapping("/all/{id}")
     public void deleteQuestion(@PathVariable int id) {
         questionRepository.deleteById(id);
     }
 
-    @CrossOrigin("*")
+
     @GetMapping("/all/count")
     public long getQuestionCount() {
         return questionRepository.count();
     }
 
-    @CrossOrigin("*")
+
     @PostMapping("/question")
     public Question newQuestion(@RequestBody Question question) {
         return questionRepository.save(question);
