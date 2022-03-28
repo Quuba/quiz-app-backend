@@ -20,6 +20,18 @@ public class HomeController {
     public List<Question> findAllQuestions() {
         return questionRepository.findAll();
     }
+    @CrossOrigin("*")
+
+    @GetMapping("/all/{id}")
+    public Question findQuestion(@PathVariable int id) {
+        return questionRepository.findById(id);
+    }
+
+    @CrossOrigin("*")
+    @DeleteMapping("/all/{id}")
+    public void deleteQuestion(@PathVariable int id) {
+        questionRepository.deleteById(id);
+    }
 
     @CrossOrigin("*")
     @GetMapping("/all/count")
